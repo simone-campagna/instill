@@ -24,7 +24,7 @@ __all__ = [
     'Flask', 'Container',
 ]
 
-INSTILL_API_VERSION = '0.1.0'
+INSTILL_API_VERSION = '0.1.1'
 
 MAX_LINE_LENGTH = 120
 
