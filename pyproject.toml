@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "instill"
-version = "0.1.0"  ## bumpversion!
+version = "0.1.1"  ## bumpver!
 authors = [
     {name = "Simone Campagna", email = "simone.campagna11@gmail.com"},
 ]
@@ -15,7 +15,7 @@ classifiers = []
 dependencies = ["pyyaml", "argcomplete"]
 
 [project.optional-dependencies]
-develop = ["pytest", "pytest-sugar",
+develop = ["bumpver", "pytest", "pytest-sugar",
            "build", "twine"]
 
 [tool.setuptools.packages.find]
@@ -23,3 +23,26 @@ where = ["src"]
 
 [project.scripts]
 instill = "instill.tool:main"
+
+[tool.bumpver]
+current_version = "0.1.1" ## bumpver!
+version_pattern = "MAJOR.MINOR.PATCH"
+commit_message = "bump version {old_version} -> {new_version}"
+commit = true
+tag = false
+push = false
+
+[tool.bumpver.file_patterns]
+"pyproject.toml" = [
+    'current_version = "{version}"',
+    'version = "{version}"',
+]
+"README.md" = [
+    "{version}",
+]
+"src/instill/version.py" = [
+    "VERSION = '{version}'",
+]
+"src/instill/drop.py" = [
+    "INSTILL_API_VERSION = '{version}'",
+]
