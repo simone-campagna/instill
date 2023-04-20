@@ -3,7 +3,7 @@ __all__ = [
 ]
 
 
-VERSION = '0.1.0'  ## bumpversion!
+VERSION = '0.1.1'  ## bumpversion!
 
 
 def get_version():
